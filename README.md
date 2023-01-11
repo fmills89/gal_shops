@@ -21,7 +21,7 @@ Deployed details coming soon..
 
 ## Screenshots
 
-<img width="240" alt="image" src="https://user-images.githubusercontent.com/89666151/195449441-ea4ef731-f82c-46d2-a37e-731a695cd4f5.png"> <img width="240" alt="image" src="https://user-images.githubusercontent.com/89666151/195449512-a8668225-6ff3-49a4-a678-47b5c4e8e366.png"> <img width="240" alt="image" src="https://user-images.githubusercontent.com/89666151/195449579-2de53f02-4e39-49ad-b1c2-ff1efba86eee.png">
+<img width="240" alt="image" src="https://user-images.githubusercontent.com/89666151/211912831-b99971b6-d807-481f-bb86-d5b8b22fe421.PNG"> <img width="240" alt="image" src="https://user-images.githubusercontent.com/89666151/211912967-66fc573c-b544-44d0-9850-9b8e6fee9402.PNG"> <img width="240" alt="image" src="https://user-images.githubusercontent.com/89666151/211913033-a827c81f-5a97-4ea5-b622-8737d4600c26.PNG">
 
 ## Installation
 
