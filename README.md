@@ -13,7 +13,7 @@
 
 ## Description
 
-Built using React-Native, GLA Shops helps you keep track of what you need before heading to the store. Never go grocery shopping without a list! This is my first React Native application built without the use of a tutorial guiding me along the way. I used previous React Native experience and Udemy to help me implement features. GLA Shops is designed by me as well.
+Built using React-Native, GLA Shops helps you keep track of what you need before heading to the store. Never go grocery shopping without a list! This is my first React Native application built without the use of a tutorial guiding me along the way. I used previous React Native experience and Udemy to help me implement features. GLA Shops is designed by me as well. The Git repo does not have many commits due to me having issues deploying the application. Original git repo: <a href='https://github.com/fmills89/mobile-grocery-list'>here.
 
 ### Deployed Application
 
