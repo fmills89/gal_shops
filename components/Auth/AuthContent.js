@@ -36,6 +36,7 @@ function AuthContent({isLogin, onAuthenticate}) {
     password = password.trim();
 
     const emailIsValid = email.includes('@');
+    // firebase require passwords longer than 6 chars
     const passwordIsValid = password.length > 6;
     const emailsAreEqual = email === confirmEmail;
     const passwordsAreEqual = password === confirmPassword;
@@ -54,6 +55,7 @@ function AuthContent({isLogin, onAuthenticate}) {
       });
       return;
     }
+    // upon success an object will be passed to onAuth
     onAuthenticate({email, password});
   }
 

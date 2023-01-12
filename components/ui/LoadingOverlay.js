@@ -1,5 +1,6 @@
 import {ActivityIndicator, StyleSheet, Text, View} from 'react-native';
 
+// loadingoverlay wants a message prop
 function LoadingOverlay({message}) {
   <View style={styles.rootContainer}>
     <Text style={styles.message}>{message}</Text>
