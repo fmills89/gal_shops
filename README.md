@@ -5,7 +5,6 @@
 - [Description](#description)
 - [Deployed Application](#deployed-application)
 - [Screenshots](#screenshots)
-- [Installation](#installation)
 - [Built With](#built-with)
 - [License](#license)
 - [Comments](#comments)
@@ -22,23 +21,6 @@ Deployed details coming soon..
 ## Screenshots
 
 <img width="240" alt="image" src="https://user-images.githubusercontent.com/89666151/211912831-b99971b6-d807-481f-bb86-d5b8b22fe421.PNG"> <img width="240" alt="image" src="https://user-images.githubusercontent.com/89666151/211912967-66fc573c-b544-44d0-9850-9b8e6fee9402.PNG"> <img width="240" alt="image" src="https://user-images.githubusercontent.com/89666151/211913033-a827c81f-5a97-4ea5-b622-8737d4600c26.PNG">
-
-## Installation
-
-```
-# Clone this repository
-$ git clone git@github.com:fmills89/gla_shops.git
-
-# Go into the repository
-$ cd gla_shops
-
-# Install dependencies
-$ npm install
-
-# Run the app
-$ npm run start
-$ npm run ios
-```
 
 ## Built With
 
