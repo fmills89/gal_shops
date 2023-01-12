@@ -1,11 +1,16 @@
 import {useState} from 'react';
 import {Alert, View, StyleSheet} from 'react-native';
+// importing hook to use to switch to sign up
+import {useNavigation} from '@react-navigation/native';
 
 import FlatButton from '../ui/FlatButton';
 import AuthForm from './AuthForm';
 import {GlobalStyles} from '../../constants/styles';
 
 function AuthContent({isLogin, onAuthenticate}) {
+  // creating navigation object
+  const navigation = useNavigation();
+
   const [credentialsInvalid, setCredentialsInvalid] = useState({
     email: false,
     password: false,
@@ -13,7 +18,15 @@ function AuthContent({isLogin, onAuthenticate}) {
     confirmPassword: false,
   });
 
-  function switchAuthModeHandler() {}
+  // switching between loging/sign up depending on boolean isLogin
+  function switchAuthModeHandler() {
+    // using replace - there is no back button
+    if (isLogin) {
+      navigation.replace('Signup');
+    } else {
+      navigation.replace('Login');
+    }
+  }
 
   // validating credentials
   function submitHandler(credentials) {
