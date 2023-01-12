@@ -16,69 +16,63 @@ import {createDrawerNavigator} from '@react-navigation/drawer';
 import CategoriesScreen from './screens/CategoriesScreen';
 import GroceriesContextProvider from './store/groceries-context';
 import CategoryDetailsScreen from './screens/CategoryDetailsScreen';
+import LoginScreen from './screens/LoginScreen';
+import SignupScreen from './screens/SignupScreen';
+import WelcomeScreen from './screens/WelcomeScreen';
+import {GlobalStyles} from './constants/styles';
 
 const Stack = createNativeStackNavigator();
 const Drawer = createDrawerNavigator();
 
-import {
-  SafeAreaView,
-  ScrollView,
-  StatusBar,
-  StyleSheet,
-  Text,
-  useColorScheme,
-  View,
-} from 'react-native';
+function AuthStack() {
+  return (
+    <Stack.Navigator
+      screenOptions={{
+        headerStyle: {backgroundColor: GlobalStyles.colors.accent500},
+        headerTintColor: 'white',
+        contentStyle: {backgroundColor: GlobalStyles.colors.accent500},
+      }}>
+      <Stack.Screen name="Login" component={LoginScreen} />
+      <Stack.Screen name="Signup" component={SignupScreen} />
+    </Stack.Navigator>
+  );
+}
 
+function AuthenticatedStack() {
+  return (
+    <Stack.Navigator
+      screenOptions={{
+        headerStyle: {backgroundColor: GlobalStyles.colors.accent500},
+        headerTintColor: 'white',
+        contentStyle: {backgroundColor: '#cccccc'},
+      }}>
+      {/* <Stack.Screen name="Welcome" component={WelcomeScreen} /> */}
+      <Stack.Screen
+        name="CategoriesScreen"
+        component={CategoriesScreen}
+        options={{title: 'Grocery Tiles'}}
+      />
+      <Stack.Screen
+        name="CategoryDetailsScreen"
+        component={CategoryDetailsScreen}
+      />
+    </Stack.Navigator>
+  );
+}
+
+function Navigation() {
+  return (
+    <NavigationContainer>
+      <AuthStack />
+    </NavigationContainer>
+  );
+}
 const App = () => {
   return (
     <>
-      <GroceriesContextProvider>
-        <NavigationContainer>
-          <Stack.Navigator
-            screenOptions={{
-              headerStyle: {backgroundColor: '#cccccc'},
-              headerTintColor: 'white',
-              contentStyle: {backgroundColor: '#cccccc'},
-            }}>
-            <Stack.Screen
-              name="CategoriesScreen"
-              component={CategoriesScreen}
-              options={{title: 'Grocery Tiles'}}
-            />
-            <Stack.Screen
-              name="CategoryDetailsScreen"
-              component={CategoryDetailsScreen}
-            />
-          </Stack.Navigator>
-        </NavigationContainer>
-      </GroceriesContextProvider>
+      <Navigation />
     </>
   );
 };
-
-const styles = StyleSheet.create({
-  screen: {
-    flex: 1,
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-  sectionContainer: {
-    marginTop: 32,
-    paddingHorizontal: 24,
-  },
-  sectionTitle: {
-    fontSize: 24,
-    fontWeight: '600',
-  },
-  sectionDescription: {
-    marginTop: 8,
-    fontSize: 18,
-    fontWeight: '400',
-  },
-  highlight: {
-    fontWeight: '700',
-  },
-});
 
 export default App;
