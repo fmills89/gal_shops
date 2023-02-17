@@ -2,15 +2,23 @@ import axios from 'axios';
 
 const API_KEY = 'AIzaSyCEAC5gL1tNpJMoh3vPFvvO510NGX7ks5c';
 
+async function authenticate(mode, email, password) {
+  const url = `https://identitytoolkit.googleapis.com/v1/accounts:${mode}?key=${API_KEY}`;
+
+  const response = await axios.post(url, {
+    email: email,
+    password: password,
+    returnSecureToken: true,
+  });
+  const token = response.data.idToken;
+  return token;
+}
+
 // create user sending to firebase - using async will always return a promise
-export async function createUser(email, password) {
-  // we can now store the response in a var by using promise
-  const response = await axios.post(
-    `https://identitytoolkit.googleapis.com/v1/accounts:signUp?key=${API_KEY}`,
-    {
-      email: email,
-      password: password,
-      returnSecureToken: true,
-    },
-  );
+export function createUser(email, password) {
+  return authenticate('signUp', email, password);
+}
+
+export function login(email, password) {
+  return authenticate('signInWithPassword', email, password);
 }

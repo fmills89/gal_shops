@@ -7,7 +7,7 @@ import 'react-native-gesture-handler';
  * @flow strict-local
  */
 
-import React from 'react';
+import {React, useContext} from 'react';
 
 import {NavigationContainer} from '@react-navigation/native';
 import {createNativeStackNavigator} from '@react-navigation/native-stack';
@@ -20,6 +20,7 @@ import LoginScreen from './screens/LoginScreen';
 import SignupScreen from './screens/SignupScreen';
 import WelcomeScreen from './screens/WelcomeScreen';
 import {GlobalStyles} from './constants/styles';
+import AuthContextProvider, {AuthContext} from './store/auth-context';
 
 const Stack = createNativeStackNavigator();
 const Drawer = createDrawerNavigator();
@@ -61,16 +62,23 @@ function AuthenticatedStack() {
 }
 
 function Navigation() {
+  const authCtx = useContext(AuthContext);
+
   return (
     <NavigationContainer>
-      <AuthStack />
+      {/* If not logged in */}
+      {!authCtx.isAuthenticated && <AuthStack />}
+      {/* If logged in */}
+      {authCtx.isAuthenticated && <AuthenticatedStack />}
     </NavigationContainer>
   );
 }
 const App = () => {
   return (
     <>
-      <Navigation />
+      <AuthContextProvider>
+        <Navigation />
+      </AuthContextProvider>
     </>
   );
 };
